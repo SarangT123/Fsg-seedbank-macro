@@ -10,6 +10,6 @@ Cd into the folder
 
 eg: `cd downloads`
 
-do `pip install -r requirements.txt
+do `pip install -r requirements.txt`
 
 Run the file using `python seedbank.py`
