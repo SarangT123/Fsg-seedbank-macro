@@ -16,4 +16,4 @@ Run the file using `python seedbank.py`
 
 ## Developer notes 
 This macro currently requires python and will be packaged to run without python soon
-A special thanks to AabhasDanger specnr and Andynovo for their contributions
+## A special thanks to AabhasDanger specnr and Andynovo for their contributions
