@@ -42,9 +42,10 @@ def seedbank(filter):
     seed = json.loads(request.text)
     print(f"Response : {request.text} \n Response code : {request.status_code}")
     seed = seed['struct']
+    seed = requests.get(f"https://seedbanktest.c3tmlive.repl.co/{seed['struct']}/{seed['class']}/{seed['randbiome']}/{seed['pref']}")
     return seed
 
-def macro_seedbank(seed):
+def macro_seedbank():
         pyautogui.press('Esc')
         time.sleep(0.1)
         pyautogui.press('tab')
@@ -64,8 +65,12 @@ def macro_seedbank(seed):
         pyautogui.press('tab')
         time.sleep(delay)
         pyautogui.press('enter')
-
+        print("searching for seed from the api")
+        seed = seedbank(seed_filter)
+        print("obtained seed")
         print('escape done')
+        if pc == 6:
+            time.sleep(2)
 
         pyautogui.press('tab')
         time.sleep(delay) 
@@ -125,9 +130,5 @@ def macro_seedbank(seed):
 
 while True:
     if keyboard.is_pressed(hotkey) == True:
-        seed = seedbank(seed_filter)
         print('reset initiatiated')
-        print('recived seed')
-        print(seed)
-        macro_seedbank(seed)
-
+        macro_seedbank()
